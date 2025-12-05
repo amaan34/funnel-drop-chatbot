@@ -81,12 +81,15 @@ def classify_faq_topic(question: str) -> str:
 
 def parse_faqs(text: str) -> List[Dict[str, Any]]:
     faqs: List[Dict[str, Any]] = []
-    qa_pattern = r"Question:\s*(.*?)\s*(?:Answer:|$)(.*?)(?=Question:|Call Starter|$)"
-    matches = re.finditer(qa_pattern, text, re.DOTALL | re.IGNORECASE)
+    qa_pattern = re.compile(
+        r"Question:\s*(?P<question>.+?)(?:\r?\n+)(?:Answer:\s*)?(?P<answer>.*?)(?=Question:|Call Starter|$)",
+        re.DOTALL | re.IGNORECASE,
+    )
+    matches = qa_pattern.finditer(text)
 
     for match in matches:
-        question = match.group(1).strip()
-        answer = match.group(2).strip()
+        question = match.group("question").strip()
+        answer = match.group("answer").strip()
         if not question or not answer:
             continue
 

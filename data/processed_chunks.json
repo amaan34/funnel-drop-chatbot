@@ -115,38 +115,282 @@
     "chunk_id": "funnel_step_5"
   },
   {
-    "content": "Question: What if my initial credit limit is low? \nThe limit offered to you is not the final one. The system auto-approves a starting limit when you \nbegin the application. The bank will manually review your card usage and increase the limit \nover time. \n \n\nQuestion: I'm stuck on the VKYC step. What do I need? \nVKYC is the Video KYC call. You need to complete it between 9:00 am to 11:00 pm and have \nyour original physical PAN card ready to show during the video. If you are not feeling well, \nplease complete it once you feel better. \nQuestion: I completed VKYC, but the card is still not active. \nCongratulations on completing your VKYC, which has been successfully approved. The final \nonboarding process (OTP/Activation) is pending. \n●​ Open your Jupiter application. \n●​ Look for the \"Get the most rewarding RuPay credit card\" or \"Activate Card\" option \non the home page. \n●​ Follow the prompts to continue the application and complete the final OTP step. \nQuestion: I'm having trouble with the OTP/Activation step. \nIf you are having issues entering the OTP or activating the card, you can contact the support \nnumber for assistance.  \nQuestion: When will I receive my physical card? \nYour physical card will be dispatched shortly and will be delivered to you within five to seven \ndays. \nQuestion: Can I start using the card before the physical one arrives? \nYes, you can activate the virtual card immediately through the app. Once activated, you can \nuse the card for domestic and UPI transactions. However, until the physical card is delivered, \nyour usable credit limit may be temporarily capped (e.g., at ₹10,000) for security reasons. \nQuestion:  What about the Times Prime offer? \nYou will be eligible for a Times Prime membership as a complimentary benefit. The details \nregarding this benefit will be sent to your registered email address. \nQuestion: Are there any annual fees? \nNo, the card is lifetime free, meaning there is no joining fee or annual fee to worry about. \nQuestion: Is there any joining fee? \nNo, the joining fee has been waived for you. \nQuestion:  I am an existing CSB Bank customer. Do I still need to complete eKYC? \nAnswer No, if you already have an account with CSB Bank (as our credit card is offered via \nCSB Bank), you can skip the eKYC step during the application process. \n \n\nQuestion: Why do I need to take a 'Liveliness' video?\n\nAnswer: The 'Liveliness' check is a security measure used to verify that you are a real human \nand not a bot or fraudulent system trying to apply for the card.\n\nRelated Stage: eKYC\nTopic Category: fees",
+    "content": "Question: What if my initial credit limit is low?\n\nAnswer: The limit offered to you is not the final one. The system auto-approves a starting limit when you \nbegin the application. The bank will manually review your card usage and increase the limit \nover time.\n\nRelated Stage: General\nTopic Category: credit_limit",
     "metadata": {
       "section": "faq",
-      "stage": "eKYC",
-      "topic": "fees",
+      "stage": "General",
+      "topic": "credit_limit",
       "chunk_type": "faq",
-      "question": "What if my initial credit limit is low? \nThe limit offered to you is not the final one. The system a",
+      "question": "What if my initial credit limit is low?",
       "is_partial": false,
       "part_number": null,
       "document_source": "credit_card_onboarding_faq",
       "document_version": "1.0",
       "chunk_id": "faq_0",
-      "chunk_length": 2578,
-      "chunk_tokens": 644,
-      "stage_canonical": "eKYC",
-      "stage_priority": 0,
+      "chunk_length": 314,
+      "chunk_tokens": 78,
+      "stage_canonical": "General",
+      "stage_priority": 5,
+      "mentions_credit_limit": true,
+      "mentions_fees": false,
+      "tone": "neutral",
+      "has_action_steps": false
+    },
+    "chunk_id": "faq_0"
+  },
+  {
+    "content": "Question: I'm stuck on the VKYC step. What do I need?\n\nAnswer: VKYC is the Video KYC call. You need to complete it between 9:00 am to 11:00 pm and have \nyour original physical PAN card ready to show during the video. If you are not feeling well, \nplease complete it once you feel better.\n\nRelated Stage: VKYC\nTopic Category: vkyc_issues",
+    "metadata": {
+      "section": "faq",
+      "stage": "VKYC",
+      "topic": "vkyc_issues",
+      "chunk_type": "faq",
+      "question": "I'm stuck on the VKYC step. What do I need?",
+      "is_partial": false,
+      "part_number": null,
+      "document_source": "credit_card_onboarding_faq",
+      "document_version": "1.0",
+      "chunk_id": "faq_1",
+      "chunk_length": 336,
+      "chunk_tokens": 84,
+      "stage_canonical": "VKYC",
+      "stage_priority": 3,
       "error_codes_mentioned": [
-        "VKYC",
         "VKYC",
         "VKYC",
         "VKYC"
       ],
-      "mentions_credit_limit": true,
+      "mentions_credit_limit": false,
       "mentions_fees": true,
       "mentions_timeline": [
         "00 am",
         "00 pm"
       ],
+      "tone": "procedural",
+      "has_action_steps": true
+    },
+    "chunk_id": "faq_1"
+  },
+  {
+    "content": "Question: I completed VKYC, but the card is still not active.\n\nAnswer: Congratulations on completing your VKYC, which has been successfully approved. The final \nonboarding process (OTP/Activation) is pending. \n●​ Open your Jupiter application. \n●​ Look for the \"Get the most rewarding RuPay credit card\" or \"Activate Card\" option \non the home page. \n●​ Follow the prompts to continue the application and complete the final OTP step.\n\nRelated Stage: VKYC\nTopic Category: vkyc_issues",
+    "metadata": {
+      "section": "faq",
+      "stage": "VKYC",
+      "topic": "vkyc_issues",
+      "chunk_type": "faq",
+      "question": "I completed VKYC, but the card is still not active.",
+      "is_partial": false,
+      "part_number": null,
+      "document_source": "credit_card_onboarding_faq",
+      "document_version": "1.0",
+      "chunk_id": "faq_2",
+      "chunk_length": 481,
+      "chunk_tokens": 120,
+      "stage_canonical": "VKYC",
+      "stage_priority": 3,
+      "error_codes_mentioned": [
+        "VKYC",
+        "VKYC",
+        "VKYC"
+      ],
+      "mentions_credit_limit": false,
+      "mentions_fees": false,
       "tone": "reassuring",
       "has_action_steps": true
     },
-    "chunk_id": "faq_0"
+    "chunk_id": "faq_2"
+  },
+  {
+    "content": "Question: I'm having trouble with the OTP/Activation step.\n\nAnswer: If you are having issues entering the OTP or activating the card, you can contact the support \nnumber for assistance.\n\nRelated Stage: OTP\nTopic Category: general",
+    "metadata": {
+      "section": "faq",
+      "stage": "OTP",
+      "topic": "general",
+      "chunk_type": "faq",
+      "question": "I'm having trouble with the OTP/Activation step.",
+      "is_partial": false,
+      "part_number": null,
+      "document_source": "credit_card_onboarding_faq",
+      "document_version": "1.0",
+      "chunk_id": "faq_3",
+      "chunk_length": 229,
+      "chunk_tokens": 57,
+      "stage_canonical": "OTP",
+      "stage_priority": 4,
+      "mentions_credit_limit": false,
+      "mentions_fees": false,
+      "tone": "neutral",
+      "has_action_steps": true
+    },
+    "chunk_id": "faq_3"
+  },
+  {
+    "content": "Question: When will I receive my physical card?\n\nAnswer: Your physical card will be dispatched shortly and will be delivered to you within five to seven \ndays.\n\nRelated Stage: General\nTopic Category: card_delivery",
+    "metadata": {
+      "section": "faq",
+      "stage": "General",
+      "topic": "card_delivery",
+      "chunk_type": "faq",
+      "question": "When will I receive my physical card?",
+      "is_partial": false,
+      "part_number": null,
+      "document_source": "credit_card_onboarding_faq",
+      "document_version": "1.0",
+      "chunk_id": "faq_4",
+      "chunk_length": 213,
+      "chunk_tokens": 53,
+      "stage_canonical": "General",
+      "stage_priority": 5,
+      "mentions_credit_limit": false,
+      "mentions_fees": false,
+      "tone": "neutral",
+      "has_action_steps": false
+    },
+    "chunk_id": "faq_4"
+  },
+  {
+    "content": "Question: Can I start using the card before the physical one arrives?\n\nAnswer: Yes, you can activate the virtual card immediately through the app. Once activated, you can \nuse the card for domestic and UPI transactions. However, until the physical card is delivered, \nyour usable credit limit may be temporarily capped (e.g., at ₹10,000) for security reasons.\n\nRelated Stage: OTP\nTopic Category: card_delivery",
+    "metadata": {
+      "section": "faq",
+      "stage": "OTP",
+      "topic": "card_delivery",
+      "chunk_type": "faq",
+      "question": "Can I start using the card before the physical one arrives?",
+      "is_partial": false,
+      "part_number": null,
+      "document_source": "credit_card_onboarding_faq",
+      "document_version": "1.0",
+      "chunk_id": "faq_5",
+      "chunk_length": 409,
+      "chunk_tokens": 102,
+      "stage_canonical": "OTP",
+      "stage_priority": 4,
+      "mentions_credit_limit": true,
+      "mentions_fees": false,
+      "tone": "explanatory",
+      "has_action_steps": false
+    },
+    "chunk_id": "faq_5"
+  },
+  {
+    "content": "Question: What about the Times Prime offer?\n\nAnswer: You will be eligible for a Times Prime membership as a complimentary benefit. The details \nregarding this benefit will be sent to your registered email address.\n\nRelated Stage: General\nTopic Category: offers",
+    "metadata": {
+      "section": "faq",
+      "stage": "General",
+      "topic": "offers",
+      "chunk_type": "faq",
+      "question": "What about the Times Prime offer?",
+      "is_partial": false,
+      "part_number": null,
+      "document_source": "credit_card_onboarding_faq",
+      "document_version": "1.0",
+      "chunk_id": "faq_6",
+      "chunk_length": 260,
+      "chunk_tokens": 65,
+      "stage_canonical": "General",
+      "stage_priority": 5,
+      "mentions_credit_limit": false,
+      "mentions_fees": false,
+      "tone": "neutral",
+      "has_action_steps": false
+    },
+    "chunk_id": "faq_6"
+  },
+  {
+    "content": "Question: Are there any annual fees?\n\nAnswer: No, the card is lifetime free, meaning there is no joining fee or annual fee to worry about.\n\nRelated Stage: General\nTopic Category: fees",
+    "metadata": {
+      "section": "faq",
+      "stage": "General",
+      "topic": "fees",
+      "chunk_type": "faq",
+      "question": "Are there any annual fees?",
+      "is_partial": false,
+      "part_number": null,
+      "document_source": "credit_card_onboarding_faq",
+      "document_version": "1.0",
+      "chunk_id": "faq_7",
+      "chunk_length": 183,
+      "chunk_tokens": 45,
+      "stage_canonical": "General",
+      "stage_priority": 5,
+      "mentions_credit_limit": false,
+      "mentions_fees": true,
+      "tone": "neutral",
+      "has_action_steps": false
+    },
+    "chunk_id": "faq_7"
+  },
+  {
+    "content": "Question: Is there any joining fee?\n\nAnswer: No, the joining fee has been waived for you.\n\nRelated Stage: General\nTopic Category: fees",
+    "metadata": {
+      "section": "faq",
+      "stage": "General",
+      "topic": "fees",
+      "chunk_type": "faq",
+      "question": "Is there any joining fee?",
+      "is_partial": false,
+      "part_number": null,
+      "document_source": "credit_card_onboarding_faq",
+      "document_version": "1.0",
+      "chunk_id": "faq_8",
+      "chunk_length": 134,
+      "chunk_tokens": 33,
+      "stage_canonical": "General",
+      "stage_priority": 5,
+      "mentions_credit_limit": false,
+      "mentions_fees": true,
+      "tone": "neutral",
+      "has_action_steps": false
+    },
+    "chunk_id": "faq_8"
+  },
+  {
+    "content": "Question: I am an existing CSB Bank customer. Do I still need to complete eKYC?\n\nAnswer: Answer No, if you already have an account with CSB Bank (as our credit card is offered via \nCSB Bank), you can skip the eKYC step during the application process.\n\nRelated Stage: eKYC\nTopic Category: general",
+    "metadata": {
+      "section": "faq",
+      "stage": "eKYC",
+      "topic": "general",
+      "chunk_type": "faq",
+      "question": "I am an existing CSB Bank customer. Do I still need to complete eKYC?",
+      "is_partial": false,
+      "part_number": null,
+      "document_source": "credit_card_onboarding_faq",
+      "document_version": "1.0",
+      "chunk_id": "faq_9",
+      "chunk_length": 295,
+      "chunk_tokens": 73,
+      "stage_canonical": "eKYC",
+      "stage_priority": 0,
+      "mentions_credit_limit": false,
+      "mentions_fees": false,
+      "tone": "neutral",
+      "has_action_steps": true
+    },
+    "chunk_id": "faq_9"
+  },
+  {
+    "content": "Question: Why do I need to take a 'Liveliness' video?\n\nAnswer: The 'Liveliness' check is a security measure used to verify that you are a real human \nand not a bot or fraudulent system trying to apply for the card.\n\nRelated Stage: Liveliness\nTopic Category: general",
+    "metadata": {
+      "section": "faq",
+      "stage": "Liveliness",
+      "topic": "general",
+      "chunk_type": "faq",
+      "question": "Why do I need to take a 'Liveliness' video?",
+      "is_partial": false,
+      "part_number": null,
+      "document_source": "credit_card_onboarding_faq",
+      "document_version": "1.0",
+      "chunk_id": "faq_10",
+      "chunk_length": 265,
+      "chunk_tokens": 66,
+      "stage_canonical": "Liveliness",
+      "stage_priority": 1,
+      "mentions_credit_limit": false,
+      "mentions_fees": false,
+      "tone": "neutral",
+      "has_action_steps": true
+    },
+    "chunk_id": "faq_10"
   },
   {
     "content": "Question: My VKYC failed, but I did everything correctly. What should I do?\n\nAnswer: VKYC is handled by the bank, and sometimes the system may be temporarily down, \ncausing the VKYC to not pass through. Please try initiating the VKYC again when convenient.\n\nRelated Stage: VKYC\nTopic Category: vkyc_issues",
@@ -160,7 +404,7 @@
       "part_number": null,
       "document_source": "credit_card_onboarding_faq",
       "document_version": "1.0",
-      "chunk_id": "faq_1",
+      "chunk_id": "faq_11",
       "chunk_length": 305,
       "chunk_tokens": 76,
       "stage_canonical": "VKYC",
@@ -177,23 +421,23 @@
       "tone": "procedural",
       "has_action_steps": false
     },
-    "chunk_id": "faq_1"
+    "chunk_id": "faq_11"
   },
   {
-    "content": "Question: My VKYC video has been completed with an auditor. How long does the agent and \napproval process take?\n\nAnswer: The VKYC approval is split into two steps: first, an Agent (a real person) speaks with \nthe user and then an Auditor reviews the recording between the Agent and user for final \napproval. The platform aims to process these approvals quickly to activate your card.\n\nRelated Stage: VKYC\nTopic Category: vkyc_issues",
+    "content": "Question: My VKYC video has been completed with an auditor. How long does the agent and\n\nAnswer: approval process take? \nAnswer: The VKYC approval is split into two steps: first, an Agent (a real person) speaks with \nthe user and then an Auditor reviews the recording between the Agent and user for final \napproval. The platform aims to process these approvals quickly to activate your card.\n\nRelated Stage: VKYC\nTopic Category: vkyc_issues",
     "metadata": {
       "section": "faq",
       "stage": "VKYC",
       "topic": "vkyc_issues",
       "chunk_type": "faq",
-      "question": "My VKYC video has been completed with an auditor. How long does the agent and \napproval process take",
+      "question": "My VKYC video has been completed with an auditor. How long does the agent and",
       "is_partial": false,
       "part_number": null,
       "document_source": "credit_card_onboarding_faq",
       "document_version": "1.0",
-      "chunk_id": "faq_2",
-      "chunk_length": 432,
-      "chunk_tokens": 108,
+      "chunk_id": "faq_12",
+      "chunk_length": 440,
+      "chunk_tokens": 110,
       "stage_canonical": "VKYC",
       "stage_priority": 3,
       "error_codes_mentioned": [
@@ -206,23 +450,23 @@
       "tone": "neutral",
       "has_action_steps": true
     },
-    "chunk_id": "faq_2"
+    "chunk_id": "faq_12"
   },
   {
-    "content": "Question: I already have a paid Times Prime membership. How does this complimentary offer \nwork with my existing account?\n\nAnswer: The complimentary Times Prime membership is valid for 12 months and is designed \nto provide you with a full year of benefits. If you have an existing membership, you may be able \nto activate this new 12-month voucher before the expiry date of your current membership. \nPlease refer to the specific terms sent to your email for details.\n\nRelated Stage: OTP\nTopic Category: offers",
+    "content": "Question: I already have a paid Times Prime membership. How does this complimentary offer\n\nAnswer: work with my existing account? \nAnswer: The complimentary Times Prime membership is valid for 12 months and is designed \nto provide you with a full year of benefits. If you have an existing membership, you may be able \nto activate this new 12-month voucher before the expiry date of your current membership. \nPlease refer to the specific terms sent to your email for details.\n\nRelated Stage: OTP\nTopic Category: offers",
     "metadata": {
       "section": "faq",
       "stage": "OTP",
       "topic": "offers",
       "chunk_type": "faq",
-      "question": "I already have a paid Times Prime membership. How does this complimentary offer \nwork with my existi",
+      "question": "I already have a paid Times Prime membership. How does this complimentary offer",
       "is_partial": false,
       "part_number": null,
       "document_source": "credit_card_onboarding_faq",
       "document_version": "1.0",
-      "chunk_id": "faq_3",
-      "chunk_length": 509,
-      "chunk_tokens": 127,
+      "chunk_id": "faq_13",
+      "chunk_length": 517,
+      "chunk_tokens": 129,
       "stage_canonical": "OTP",
       "stage_priority": 4,
       "mentions_credit_limit": false,
@@ -233,7 +477,7 @@
       "tone": "procedural",
       "has_action_steps": true
     },
-    "chunk_id": "faq_3"
+    "chunk_id": "faq_13"
   },
   {
     "content": "Question: You said the card is 'lifetime free,' but is there any fee for the physical card?\n\nAnswer: The card is indeed lifetime free, meaning there is no annual fee. There are no \ncharges for the physical card itself; it is dispatched and delivered to you within five to seven \ndays after successful onboarding.\n\nRelated Stage: General\nTopic Category: fees",
@@ -247,7 +491,7 @@
       "part_number": null,
       "document_source": "credit_card_onboarding_faq",
       "document_version": "1.0",
-      "chunk_id": "faq_4",
+      "chunk_id": "faq_14",
       "chunk_length": 357,
       "chunk_tokens": 89,
       "stage_canonical": "General",
@@ -257,7 +501,7 @@
       "tone": "neutral",
       "has_action_steps": false
     },
-    "chunk_id": "faq_4"
+    "chunk_id": "faq_14"
   },
   {
     "content": "Question: After I activate the virtual card, how do I set up UPI transactions?\n\nAnswer: Since this is a RuPay network card, you can use it for UPI transactions. During the \nfinal activation steps in the app, you will be prompted to set up your UPI PIN. The app may \noffer an 'Auto-fill card details' option to make this process easier by retrieving your card's last \nsix digits. \n \n\nBased on the provided transcripts, here are additional FAQs that address common customer \nquestions and issues encountered during the final stages of the credit card onboarding process:\n\nRelated Stage: OTP\nTopic Category: card_delivery",
@@ -271,7 +515,7 @@
       "part_number": null,
       "document_source": "credit_card_onboarding_faq",
       "document_version": "1.0",
-      "chunk_id": "faq_5",
+      "chunk_id": "faq_15",
       "chunk_length": 618,
       "chunk_tokens": 154,
       "stage_canonical": "OTP",
@@ -284,7 +528,7 @@
       "tone": "neutral",
       "has_action_steps": true
     },
-    "chunk_id": "faq_5"
+    "chunk_id": "faq_15"
   },
   {
     "content": "Question: My initial credit limit seems low. Is that the final limit?\n\nAnswer: The limit initially offered is not the final one. The system auto-approves a starting \nlimit. Once you start using the card, the bank will manually review your details and usage and \nthe credit limit will be increased.\n\nRelated Stage: General\nTopic Category: credit_limit",
@@ -298,7 +542,7 @@
       "part_number": null,
       "document_source": "credit_card_onboarding_faq",
       "document_version": "1.0",
-      "chunk_id": "faq_6",
+      "chunk_id": "faq_16",
       "chunk_length": 350,
       "chunk_tokens": 87,
       "stage_canonical": "General",
@@ -308,7 +552,7 @@
       "tone": "neutral",
       "has_action_steps": false
     },
-    "chunk_id": "faq_6"
+    "chunk_id": "faq_16"
   },
   {
     "content": "Question: Are there any joining or annual fees for the card?\n\nAnswer: No, the card is under an ongoing offer which makes it a lifetime free one. There will \nbe no joining fee or annual fee on the card.\n\nRelated Stage: General\nTopic Category: fees",
@@ -322,7 +566,7 @@
       "part_number": null,
       "document_source": "credit_card_onboarding_faq",
       "document_version": "1.0",
-      "chunk_id": "faq_7",
+      "chunk_id": "faq_17",
       "chunk_length": 246,
       "chunk_tokens": 61,
       "stage_canonical": "General",
@@ -332,23 +576,23 @@
       "tone": "neutral",
       "has_action_steps": false
     },
-    "chunk_id": "faq_7"
+    "chunk_id": "faq_17"
   },
   {
-    "content": "Question: I'm unable to enter the OTP because I can't use the auto-read function in the app. \nWhat should I do?\n\nAnswer: You can contact our support number. They will definitely check and assist you with \nthe issue.\n\nRelated Stage: OTP\nTopic Category: general",
+    "content": "Question: I'm unable to enter the OTP because I can't use the auto-read function in the app.\n\nAnswer: What should I do? \nAnswer: You can contact our support number. They will definitely check and assist you with \nthe issue.\n\nRelated Stage: OTP\nTopic Category: general",
     "metadata": {
       "section": "faq",
       "stage": "OTP",
       "topic": "general",
       "chunk_type": "faq",
-      "question": "I'm unable to enter the OTP because I can't use the auto-read function in the app. \nWhat should I do",
+      "question": "I'm unable to enter the OTP because I can't use the auto-read function in the app.",
       "is_partial": false,
       "part_number": null,
       "document_source": "credit_card_onboarding_faq",
       "document_version": "1.0",
-      "chunk_id": "faq_8",
-      "chunk_length": 259,
-      "chunk_tokens": 64,
+      "chunk_id": "faq_18",
+      "chunk_length": 267,
+      "chunk_tokens": 66,
       "stage_canonical": "OTP",
       "stage_priority": 4,
       "mentions_credit_limit": false,
@@ -356,27 +600,26 @@
       "tone": "explanatory",
       "has_action_steps": true
     },
-    "chunk_id": "faq_8"
+    "chunk_id": "faq_18"
   },
   {
-    "content": "Question: What are the requirements for completing the VKYC call? \nAnswer To complete the VKYC call, you are requested to initiate it anytime before 11 PM today \nwith your original PAN card. \nQuestion: When can I activate the virtual card? \nAnswer Once your video KYC is successfully approved, you can activate the virtual card \nimmediately through the Jupiter app. \nQuestion: What is the process to activate the card after VKYC approval?\n\nAnswer: Open the Jupiter application, go to the home page, and click on the option that says \n\"Get the most rewarding RuPay credit card\" or \"Activate Card\" to continue the application.\n\nRelated Stage: VKYC\nTopic Category: vkyc_issues",
+    "content": "Question: What are the requirements for completing the VKYC call?\n\nAnswer: Answer To complete the VKYC call, you are requested to initiate it anytime before 11 PM today \nwith your original PAN card.\n\nRelated Stage: VKYC\nTopic Category: vkyc_issues",
     "metadata": {
       "section": "faq",
       "stage": "VKYC",
       "topic": "vkyc_issues",
       "chunk_type": "faq",
-      "question": "What are the requirements for completing the VKYC call? \nAnswer To complete the VKYC call, you are r",
+      "question": "What are the requirements for completing the VKYC call?",
       "is_partial": false,
       "part_number": null,
       "document_source": "credit_card_onboarding_faq",
       "document_version": "1.0",
-      "chunk_id": "faq_9",
-      "chunk_length": 673,
-      "chunk_tokens": 168,
+      "chunk_id": "faq_19",
+      "chunk_length": 247,
+      "chunk_tokens": 61,
       "stage_canonical": "VKYC",
       "stage_priority": 3,
       "error_codes_mentioned": [
-        "VKYC",
         "VKYC",
         "VKYC",
         "VKYC"
@@ -390,23 +633,78 @@
       "tone": "neutral",
       "has_action_steps": true
     },
-    "chunk_id": "faq_9"
+    "chunk_id": "faq_19"
   },
   {
-    "content": "Question: My card has been activated, but I cannot use the full limit. Why is my limit temporarily \nlow?\n\nAnswer: Until you receive your physical credit card, you will only be able to utilize a portion of \nyour entire limit (e.g., ₹10,000) due to security measures. The entire credit limit will be \nunlocked once the physical card is successfully delivered.\n\nRelated Stage: OTP\nTopic Category: credit_limit",
+    "content": "Question: When can I activate the virtual card?\n\nAnswer: Answer Once your video KYC is successfully approved, you can activate the virtual card \nimmediately through the Jupiter app.\n\nRelated Stage: VKYC\nTopic Category: card_delivery",
+    "metadata": {
+      "section": "faq",
+      "stage": "VKYC",
+      "topic": "card_delivery",
+      "chunk_type": "faq",
+      "question": "When can I activate the virtual card?",
+      "is_partial": false,
+      "part_number": null,
+      "document_source": "credit_card_onboarding_faq",
+      "document_version": "1.0",
+      "chunk_id": "faq_20",
+      "chunk_length": 232,
+      "chunk_tokens": 58,
+      "stage_canonical": "VKYC",
+      "stage_priority": 3,
+      "error_codes_mentioned": [
+        "VKYC"
+      ],
+      "mentions_credit_limit": false,
+      "mentions_fees": false,
+      "tone": "neutral",
+      "has_action_steps": false
+    },
+    "chunk_id": "faq_20"
+  },
+  {
+    "content": "Question: What is the process to activate the card after VKYC approval?\n\nAnswer: Open the Jupiter application, go to the home page, and click on the option that says \n\"Get the most rewarding RuPay credit card\" or \"Activate Card\" to continue the application.\n\nRelated Stage: VKYC\nTopic Category: vkyc_issues",
+    "metadata": {
+      "section": "faq",
+      "stage": "VKYC",
+      "topic": "vkyc_issues",
+      "chunk_type": "faq",
+      "question": "What is the process to activate the card after VKYC approval?",
+      "is_partial": false,
+      "part_number": null,
+      "document_source": "credit_card_onboarding_faq",
+      "document_version": "1.0",
+      "chunk_id": "faq_21",
+      "chunk_length": 306,
+      "chunk_tokens": 76,
+      "stage_canonical": "VKYC",
+      "stage_priority": 3,
+      "error_codes_mentioned": [
+        "VKYC",
+        "VKYC"
+      ],
+      "mentions_credit_limit": false,
+      "mentions_fees": false,
+      "tone": "neutral",
+      "has_action_steps": true
+    },
+    "chunk_id": "faq_21"
+  },
+  {
+    "content": "Question: My card has been activated, but I cannot use the full limit. Why is my limit temporarily\n\nAnswer: low? \nAnswer: Until you receive your physical credit card, you will only be able to utilize a portion of \nyour entire limit (e.g., ₹10,000) due to security measures. The entire credit limit will be \nunlocked once the physical card is successfully delivered.\n\nRelated Stage: OTP\nTopic Category: credit_limit",
     "metadata": {
       "section": "faq",
       "stage": "OTP",
       "topic": "credit_limit",
       "chunk_type": "faq",
-      "question": "My card has been activated, but I cannot use the full limit. Why is my limit temporarily \nlow?",
+      "question": "My card has been activated, but I cannot use the full limit. Why is my limit temporarily",
       "is_partial": false,
       "part_number": null,
       "document_source": "credit_card_onboarding_faq",
       "document_version": "1.0",
-      "chunk_id": "faq_10",
-      "chunk_length": 406,
-      "chunk_tokens": 101,
+      "chunk_id": "faq_22",
+      "chunk_length": 414,
+      "chunk_tokens": 103,
       "stage_canonical": "OTP",
       "stage_priority": 4,
       "mentions_credit_limit": true,
@@ -414,7 +712,7 @@
       "tone": "explanatory",
       "has_action_steps": false
     },
-    "chunk_id": "faq_10"
+    "chunk_id": "faq_22"
   },
   {
     "content": "Question: How long does it take for the physical card to be delivered?\n\nAnswer: Your card will be dispatched on the next working day after it is approved. Once \ndispatched, delivery typically takes 5–7 days.\n\nRelated Stage: General\nTopic Category: card_delivery",
@@ -428,7 +726,7 @@
       "part_number": null,
       "document_source": "credit_card_onboarding_faq",
       "document_version": "1.0",
-      "chunk_id": "faq_11",
+      "chunk_id": "faq_23",
       "chunk_length": 261,
       "chunk_tokens": 65,
       "stage_canonical": "General",
@@ -441,7 +739,7 @@
       "tone": "neutral",
       "has_action_steps": false
     },
-    "chunk_id": "faq_11"
+    "chunk_id": "faq_23"
   },
   {
     "content": "Question: How do I ensure I get the benefits of the lifetime free offer?\n\nAnswer: To ensure the card remains lifetime free (no joining or annual fee), you must complete \nthe onboarding process by the 5th of this month (e.g., December 5th).\n\nRelated Stage: General\nTopic Category: offers",
@@ -455,7 +753,7 @@
       "part_number": null,
       "document_source": "credit_card_onboarding_faq",
       "document_version": "1.0",
-      "chunk_id": "faq_12",
+      "chunk_id": "faq_24",
       "chunk_length": 286,
       "chunk_tokens": 71,
       "stage_canonical": "General",
@@ -465,7 +763,7 @@
       "tone": "procedural",
       "has_action_steps": true
     },
-    "chunk_id": "faq_12"
+    "chunk_id": "faq_24"
   },
   {
     "content": "Question: How do I set up UPI for the card?\n\nAnswer: You can set up UPI after activating the card. The app will ask for the last six digits of \nthe card. You can use the \"Auto-fill card details\" option to easily fill this in.\n\nRelated Stage: General\nTopic Category: card_delivery",
@@ -479,7 +777,7 @@
       "part_number": null,
       "document_source": "credit_card_onboarding_faq",
       "document_version": "1.0",
-      "chunk_id": "faq_13",
+      "chunk_id": "faq_25",
       "chunk_length": 279,
       "chunk_tokens": 69,
       "stage_canonical": "General",
@@ -489,7 +787,7 @@
       "tone": "neutral",
       "has_action_steps": false
     },
-    "chunk_id": "faq_13"
+    "chunk_id": "faq_25"
   },
   {
     "content": "Question: The credit limit offered is too low, so I don't want to continue the application.\n\nAnswer: We understand you're not satisfied with the current limit. Please rest assured that this \nis not the final limit. The bank reviews account data periodically, and if a strong relationship is \nmaintained, the limit is likely to be increased over time.\n\nRelated Stage: General\nTopic Category: credit_limit",
@@ -503,7 +801,7 @@
       "part_number": null,
       "document_source": "credit_card_onboarding_faq",
       "document_version": "1.0",
-      "chunk_id": "faq_14",
+      "chunk_id": "faq_26",
       "chunk_length": 403,
       "chunk_tokens": 100,
       "stage_canonical": "General",
@@ -513,7 +811,7 @@
       "tone": "procedural",
       "has_action_steps": false
     },
-    "chunk_id": "faq_14"
+    "chunk_id": "faq_26"
   },
   {
     "content": "Question: I was just checking the offers and don't want the credit card right now.\n\nAnswer: We understand you were exploring options. We're pleased to inform you that you're \neligible for the Edge+ CSB RuPay Credit Card which offers cashback worth INR 50,000 every \nyear. We encourage you to try it and experience the cashback benefits. You can also view many \nmore live offers directly through the app once you start using the card.\n\nRelated Stage: General\nTopic Category: card_delivery",
@@ -527,7 +825,7 @@
       "part_number": null,
       "document_source": "credit_card_onboarding_faq",
       "document_version": "1.0",
-      "chunk_id": "faq_15",
+      "chunk_id": "faq_27",
       "chunk_length": 487,
       "chunk_tokens": 121,
       "stage_canonical": "General",
@@ -537,10 +835,10 @@
       "tone": "reassuring",
       "has_action_steps": false
     },
-    "chunk_id": "faq_15"
+    "chunk_id": "faq_27"
   },
   {
-    "content": "Question: I have paused the application because I don't have all my documents.\n\nAnswer: Please complete the onboarding process at the earliest, as your eKYC will remain \nvalid for only the next 3 days. If the application is not processed within this period, the app will \nprompt you to redo the eKYC.\n\nRelated Stage: eKYC\nTopic Category: general",
+    "content": "Question: I have paused the application because I don't have all my documents.\n\nAnswer: Answer: Please complete the onboarding process at the earliest, as your eKYC will remain \nvalid for only the next 3 days. If the application is not processed within this period, the app will \nprompt you to redo the eKYC.\n\nRelated Stage: eKYC\nTopic Category: general",
     "metadata": {
       "section": "faq",
       "stage": "eKYC",
@@ -551,9 +849,9 @@
       "part_number": null,
       "document_source": "credit_card_onboarding_faq",
       "document_version": "1.0",
-      "chunk_id": "faq_16",
-      "chunk_length": 345,
-      "chunk_tokens": 86,
+      "chunk_id": "faq_28",
+      "chunk_length": 353,
+      "chunk_tokens": 88,
       "stage_canonical": "eKYC",
       "stage_priority": 0,
       "mentions_credit_limit": false,
@@ -564,7 +862,7 @@
       "tone": "procedural",
       "has_action_steps": true
     },
-    "chunk_id": "faq_16"
+    "chunk_id": "faq_28"
   },
   {
     "content": "Question: What are the cashback benefits on the Edge+ CSB RuPay Credit Card?\n\nAnswer: You can enjoy: 10% cashback on shopping platforms (e.g., Amazon, Flipkart, Myntra, \nCroma, Reliance Digital), 5% cashback on travel booking via MakeMyTrip, EaseMyTrip, Yatra, \nand Cleartrip, and 1% cashback on all other eligible merchants. Cashback is capped per billing \ncycle (e.g., 10% capped at ₹1,500) and per individual merchant (e.g., 10% capped at ₹500).\n\nRelated Stage: General\nTopic Category: card_delivery",
@@ -578,7 +876,7 @@
       "part_number": null,
       "document_source": "credit_card_onboarding_faq",
       "document_version": "1.0",
-      "chunk_id": "faq_17",
+      "chunk_id": "faq_29",
       "chunk_length": 502,
       "chunk_tokens": 125,
       "stage_canonical": "General",
@@ -588,7 +886,7 @@
       "tone": "neutral",
       "has_action_steps": false
     },
-    "chunk_id": "faq_17"
+    "chunk_id": "faq_29"
   },
   {
     "content": "Question: Is there any waiver for fuel surcharge?\n\nAnswer: Yes, you will get a 1% fuel surcharge waiver. The waiver is automatically credited \nback in the form of jewels (5X Jewels). The transaction needs to be greater than ₹400.\n\nRelated Stage: General\nTopic Category: fees",
@@ -602,7 +900,7 @@
       "part_number": null,
       "document_source": "credit_card_onboarding_faq",
       "document_version": "1.0",
-      "chunk_id": "faq_18",
+      "chunk_id": "faq_30",
       "chunk_length": 274,
       "chunk_tokens": 68,
       "stage_canonical": "General",
@@ -612,7 +910,7 @@
       "tone": "neutral",
       "has_action_steps": false
     },
-    "chunk_id": "faq_18"
+    "chunk_id": "faq_30"
   },
   {
     "content": "Question: Post-VKYC, it said approval would take 72 hours, but I never received a notification.\n\nAnswer: We are glad to inform you that your VKYC is successfully approved now. You can \nproceed to activate the card from your end in the Jupiter app.\n\nRelated Stage: VKYC\nTopic Category: vkyc_issues",
@@ -626,7 +924,7 @@
       "part_number": null,
       "document_source": "credit_card_onboarding_faq",
       "document_version": "1.0",
-      "chunk_id": "faq_19",
+      "chunk_id": "faq_31",
       "chunk_length": 296,
       "chunk_tokens": 74,
       "stage_canonical": "VKYC",
@@ -644,23 +942,23 @@
       "tone": "reassuring",
       "has_action_steps": false
     },
-    "chunk_id": "faq_19"
+    "chunk_id": "faq_31"
   },
   {
-    "content": "Question: I tried completing VKYC, but the screen showed, \"We're not available at the \nmoment.\"\n\nAnswer: VKYC is available only from 9 AM to 11 PM all 7 days of the week. The best time to \ncomplete VKYC is from 12 PM to 6 PM when there is a higher chance of connecting to an \nagent at the earliest.\n\nRelated Stage: VKYC\nTopic Category: vkyc_issues",
+    "content": "Question: I tried completing VKYC, but the screen showed, \"We're not available at the\n\nAnswer: moment.\" \nAnswer: VKYC is available only from 9 AM to 11 PM all 7 days of the week. The best time to \ncomplete VKYC is from 12 PM to 6 PM when there is a higher chance of connecting to an \nagent at the earliest.\n\nRelated Stage: VKYC\nTopic Category: vkyc_issues",
     "metadata": {
       "section": "faq",
       "stage": "VKYC",
       "topic": "vkyc_issues",
       "chunk_type": "faq",
-      "question": "I tried completing VKYC, but the screen showed, \"We're not available at the \nmoment.\"",
+      "question": "I tried completing VKYC, but the screen showed, \"We're not available at the",
       "is_partial": false,
       "part_number": null,
       "document_source": "credit_card_onboarding_faq",
       "document_version": "1.0",
-      "chunk_id": "faq_20",
-      "chunk_length": 347,
-      "chunk_tokens": 86,
+      "chunk_id": "faq_32",
+      "chunk_length": 355,
+      "chunk_tokens": 88,
       "stage_canonical": "VKYC",
       "stage_priority": 3,
       "error_codes_mentioned": [
@@ -681,7 +979,7 @@
       "tone": "neutral",
       "has_action_steps": true
     },
-    "chunk_id": "faq_20"
+    "chunk_id": "faq_32"
   },
   {
     "content": "Question: What if I delay completing VKYC?\n\nAnswer: If VKYC is not completed within 30 days of starting the application, an additional \ncheck will be done to re-verify your eligibility and credit limit based on your latest bureau \nscores, as per the partner bank's credit underwriting policy.\n\nRelated Stage: VKYC\nTopic Category: vkyc_issues",
@@ -695,7 +993,7 @@
       "part_number": null,
       "document_source": "credit_card_onboarding_faq",
       "document_version": "1.0",
-      "chunk_id": "faq_21",
+      "chunk_id": "faq_33",
       "chunk_length": 341,
       "chunk_tokens": 85,
       "stage_canonical": "VKYC",
@@ -714,10 +1012,10 @@
       "tone": "neutral",
       "has_action_steps": true
     },
-    "chunk_id": "faq_21"
+    "chunk_id": "faq_33"
   },
   {
-    "content": "Question: I updated the wrong PIN code, and my VKYC didn't go through.\n\nAnswer: We are sorry, but currently, we do not have the option to go back and edit the \napplication once submitted. As a result, you will not be able to complete the VKYC process \nhere.\n\nRelated Stage: VKYC\nTopic Category: vkyc_issues",
+    "content": "Question: I updated the wrong PIN code, and my VKYC didn't go through.\n\nAnswer: Answer: We are sorry, but currently, we do not have the option to go back and edit the \napplication once submitted. As a result, you will not be able to complete the VKYC process \nhere.\n\nRelated Stage: VKYC\nTopic Category: vkyc_issues",
     "metadata": {
       "section": "faq",
       "stage": "VKYC",
@@ -728,9 +1026,9 @@
       "part_number": null,
       "document_source": "credit_card_onboarding_faq",
       "document_version": "1.0",
-      "chunk_id": "faq_22",
-      "chunk_length": 306,
-      "chunk_tokens": 76,
+      "chunk_id": "faq_34",
+      "chunk_length": 314,
+      "chunk_tokens": 78,
       "stage_canonical": "VKYC",
       "stage_priority": 3,
       "error_codes_mentioned": [
@@ -744,7 +1042,7 @@
       "tone": "neutral",
       "has_action_steps": true
     },
-    "chunk_id": "faq_22"
+    "chunk_id": "faq_34"
   },
   {
     "content": "Question: The VKYC officer told me the photo in my Aadhaar card doesn't match.\n\nAnswer: Please update your latest photo in your Aadhaar card and then retry the VKYC \nprocess.\n\nRelated Stage: eKYC\nTopic Category: vkyc_issues",
@@ -758,7 +1056,7 @@
       "part_number": null,
       "document_source": "credit_card_onboarding_faq",
       "document_version": "1.0",
-      "chunk_id": "faq_23",
+      "chunk_id": "faq_35",
       "chunk_length": 223,
       "chunk_tokens": 55,
       "stage_canonical": "eKYC",
@@ -772,23 +1070,23 @@
       "tone": "procedural",
       "has_action_steps": true
     },
-    "chunk_id": "faq_23"
+    "chunk_id": "faq_35"
   },
   {
-    "content": "Question: The VKYC officer said the VKYC couldn't be completed because of a location \nmismatch.\n\nAnswer: Please ensure you are at your communication address while completing the VKYC, \nas your location will be fetched during the process.\n\nRelated Stage: VKYC\nTopic Category: vkyc_issues",
+    "content": "Question: The VKYC officer said the VKYC couldn't be completed because of a location\n\nAnswer: mismatch. \nAnswer: Please ensure you are at your communication address while completing the VKYC, \nas your location will be fetched during the process.\n\nRelated Stage: VKYC\nTopic Category: vkyc_issues",
     "metadata": {
       "section": "faq",
       "stage": "VKYC",
       "topic": "vkyc_issues",
       "chunk_type": "faq",
-      "question": "The VKYC officer said the VKYC couldn't be completed because of a location \nmismatch.",
+      "question": "The VKYC officer said the VKYC couldn't be completed because of a location",
       "is_partial": false,
       "part_number": null,
       "document_source": "credit_card_onboarding_faq",
       "document_version": "1.0",
-      "chunk_id": "faq_24",
-      "chunk_length": 286,
-      "chunk_tokens": 71,
+      "chunk_id": "faq_36",
+      "chunk_length": 294,
+      "chunk_tokens": 73,
       "stage_canonical": "VKYC",
       "stage_priority": 3,
       "error_codes_mentioned": [
@@ -802,7 +1100,7 @@
       "tone": "procedural",
       "has_action_steps": true
     },
-    "chunk_id": "faq_24"
+    "chunk_id": "faq_36"
   },
   {
     "content": "Question: The VKYC agent said it couldn't be approved but didn't give a reason.\n\nAnswer: This may be due to an information mismatch or partial match. Please confirm that \nyou are providing all the correct details (such as address, occupation, income details, etc.). If \nneeded, you may be asked to retry the VKYC with the correct information.\n\nRelated Stage: VKYC\nTopic Category: vkyc_issues",
@@ -816,7 +1114,7 @@
       "part_number": null,
       "document_source": "credit_card_onboarding_faq",
       "document_version": "1.0",
-      "chunk_id": "faq_25",
+      "chunk_id": "faq_37",
       "chunk_length": 391,
       "chunk_tokens": 97,
       "stage_canonical": "VKYC",
@@ -831,7 +1129,7 @@
       "tone": "procedural",
       "has_action_steps": true
     },
-    "chunk_id": "faq_25"
+    "chunk_id": "faq_37"
   },
   {
     "content": "Question: I have not received any link to complete the VKYC.\n\nAnswer: VKYC can be completed via the Jupiter application. Open the app, click on the \noption \"get the most rewarding RuPay credit card\" on the homepage, and proceed to \nresume the application.\n\nRelated Stage: VKYC\nTopic Category: vkyc_issues",
@@ -845,7 +1143,7 @@
       "part_number": null,
       "document_source": "credit_card_onboarding_faq",
       "document_version": "1.0",
-      "chunk_id": "faq_26",
+      "chunk_id": "faq_38",
       "chunk_length": 304,
       "chunk_tokens": 76,
       "stage_canonical": "VKYC",
@@ -860,7 +1158,7 @@
       "tone": "neutral",
       "has_action_steps": true
     },
-    "chunk_id": "faq_26"
+    "chunk_id": "faq_38"
   },
   {
     "content": "Question: What are the items I need to keep handy before starting the VKYC?\n\nAnswer: Before starting the VKYC, please ensure you have the following ready: your Original \nPAN card, a white paper and a pen, and a quiet, well-lit space to avoid any disturbances \nduring verification.\n\nRelated Stage: VKYC\nTopic Category: vkyc_issues",
@@ -874,7 +1172,7 @@
       "part_number": null,
       "document_source": "credit_card_onboarding_faq",
       "document_version": "1.0",
-      "chunk_id": "faq_27",
+      "chunk_id": "faq_39",
       "chunk_length": 329,
       "chunk_tokens": 82,
       "stage_canonical": "VKYC",
@@ -889,23 +1187,23 @@
       "tone": "procedural",
       "has_action_steps": true
     },
-    "chunk_id": "faq_27"
+    "chunk_id": "faq_39"
   },
   {
-    "content": "Question: Can I convert large transactions into EMIs? \n \n\nAnswer Yes, if the billed amount is more than ₹2,500, you can convert them into EMIs with a \nnominal interest of 1.33% per month and an easy tenure of 3, 6, 9, or 12 months. \nQuestion: Which address will the physical card be delivered to?\n\nAnswer: The physical card will be delivered to the same address that you selected while \ncompleting your application.\n\nRelated Stage: General\nTopic Category: card_delivery",
+    "content": "Question: Can I convert large transactions into EMIs?\n\nAnswer: Answer Yes, if the billed amount is more than ₹2,500, you can convert them into EMIs with a \nnominal interest of 1.33% per month and an easy tenure of 3, 6, 9, or 12 months.\n\nRelated Stage: General\nTopic Category: card_usage",
     "metadata": {
       "section": "faq",
       "stage": "General",
-      "topic": "card_delivery",
+      "topic": "card_usage",
       "chunk_type": "faq",
-      "question": "Can I convert large transactions into EMIs? \n \n\nAnswer Yes, if the billed amount is more than ₹2,500",
+      "question": "Can I convert large transactions into EMIs?",
       "is_partial": false,
       "part_number": null,
       "document_source": "credit_card_onboarding_faq",
       "document_version": "1.0",
-      "chunk_id": "faq_28",
-      "chunk_length": 469,
-      "chunk_tokens": 117,
+      "chunk_id": "faq_40",
+      "chunk_length": 287,
+      "chunk_tokens": 71,
       "stage_canonical": "General",
       "stage_priority": 5,
       "mentions_credit_limit": false,
@@ -916,7 +1214,31 @@
       "tone": "neutral",
       "has_action_steps": false
     },
-    "chunk_id": "faq_28"
+    "chunk_id": "faq_40"
+  },
+  {
+    "content": "Question: Which address will the physical card be delivered to?\n\nAnswer: The physical card will be delivered to the same address that you selected while \ncompleting your application.\n\nRelated Stage: General\nTopic Category: card_delivery",
+    "metadata": {
+      "section": "faq",
+      "stage": "General",
+      "topic": "card_delivery",
+      "chunk_type": "faq",
+      "question": "Which address will the physical card be delivered to?",
+      "is_partial": false,
+      "part_number": null,
+      "document_source": "credit_card_onboarding_faq",
+      "document_version": "1.0",
+      "chunk_id": "faq_41",
+      "chunk_length": 236,
+      "chunk_tokens": 59,
+      "stage_canonical": "General",
+      "stage_priority": 5,
+      "mentions_credit_limit": false,
+      "mentions_fees": false,
+      "tone": "neutral",
+      "has_action_steps": false
+    },
+    "chunk_id": "faq_41"
   },
   {
     "content": "Times Prime Membership Benefits (12-month Premium Package, MRP ₹1299):\n\n- Benefit \nDuration \nSonyLIV: 6 months\n- : 6 + 6 months\n- s \nLionsgate Play: 6 months\n- s \n \n\nSpotify Premium: 4 months\n- s \nUber One: 1 months\n- Swiggy One: 6 months\n- s \nPVR Free Movie Ticket: 1 ticket\n- Moneycontrol Pro: 6 months\n- s \nGaana Plus: 12 months\n- s \nCricbuzz Plus: 6 months\n- s \nDiscovery+: 3 months\n- s \nCuriosity Stream: 1 months\n- Lenskart Gold Max: 12 months",
