@@ -23,6 +23,15 @@ Respond in English.
 """
 
 
+def build_compliance_safe_prompt(drop_reason: str, stage: str) -> str:
+    return f"""
+Draft a compliance-safe nudge for: {drop_reason}
+Stage: {stage}
+Tone: neutral, factual, avoids guarantees, avoids blame, no financial advice.
+1-2 sentences, concise. Respond in English.
+"""
+
+
 def build_translation_prompt(text: str, target_language: str = "Hindi") -> str:
     return f"Translate the following text to {target_language} while keeping the meaning and tone:\n\n{text}"
 

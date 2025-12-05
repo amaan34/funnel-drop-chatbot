@@ -76,8 +76,8 @@ def _validate_user_state(user_state: UserState) -> None:
 def predict_reason(user_state: UserState):
     try:
         _validate_user_state(user_state)
-        reasoning = orchestrator.drop_off_reasoner.analyze(user_state.dict(), [])
-        return reasoning
+        result = orchestrator.analyze_reason(user_state.dict())
+        return result
     except Exception as exc:  # noqa: BLE001
         logger.exception("predict_reason failed: %s", exc)
         raise HTTPException(status_code=500, detail="Failed to predict reason") from exc
@@ -87,13 +87,11 @@ def predict_reason(user_state: UserState):
 def nudge_user(request: NudgeRequest):
     try:
         _validate_user_state(request.user_state)
-        reasoning = orchestrator.drop_off_reasoner.analyze(request.user_state.dict(), [])
-        nudges = orchestrator.nudge_generator.generate_all(
-            reasoning.get("primary_reason", ""),
+        result = orchestrator.generate_nudges(
             user_state=request.user_state.dict(),
             language=request.language,
         )
-        return {"reasoning": reasoning, "nudges": nudges}
+        return result
     except Exception as exc:  # noqa: BLE001
         logger.exception("nudge_user failed: %s", exc)
         raise HTTPException(status_code=500, detail="Failed to generate nudge") from exc

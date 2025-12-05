@@ -24,10 +24,7 @@ class ResponseSynthesizer:
         steps_to_fix = self._extract_steps(context)
 
         if low_confidence:
-            conversational_message = (
-                "I'm not fully sure about this. Could you provide more details about what went wrong? "
-                "For example, any error messages you saw, the exact step where you got stuck, and your device/network conditions."
-            )
+            conversational_message = "I'm not fully sure — can you provide more details?"
         else:
             conversational_message = (
                 "Here's what I found:\n"
