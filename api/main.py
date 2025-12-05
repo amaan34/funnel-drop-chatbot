@@ -1,11 +1,15 @@
 import logging
+from pathlib import Path
+
 from fastapi import FastAPI, HTTPException
+from dotenv import load_dotenv
 
 from api.schemas import ChatRequest, NudgeRequest, UserState
 from api.middleware import logging_middleware
 from src.embeddings.embedding_generator import EmbeddingGenerator
 from src.llm.llm_client import LLMClient
 from src.vector_store.bm25_store import BM25KeywordStore
+from src.vector_store.build_store import load_chunks
 from src.vector_store.chroma_store import ChromaVectorStore
 from src.vector_store.hybrid_retriever import HybridRetriever
 from src.vector_store.reranker import CrossEncoderReranker
@@ -13,6 +17,9 @@ from src.orchestration.chatbot_orchestrator import ChatbotOrchestrator
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 logger = logging.getLogger(__name__)
+
+# Ensure environment variables from the project .env are available when running via uvicorn
+load_dotenv(Path(__file__).resolve().parent.parent / ".env", override=False)
 
 app = FastAPI(title="Funnel Drop Chatbot API")
 app.middleware("http")(logging_middleware)
@@ -29,10 +36,25 @@ def _init_retriever() -> HybridRetriever:
     )
 
     bm25_store = BM25KeywordStore()
-    try:
-        bm25_store.load_index("data/bm25_index.pkl")
-    except FileNotFoundError:
-        logger.warning("BM25 index not found; keyword search will be unavailable until built.")
+    bm25_index_path = Path("data/bm25_index.pkl")
+    if bm25_index_path.exists():
+        try:
+            bm25_store.load_index(str(bm25_index_path))
+        except Exception as exc:  # noqa: BLE001
+            logger.warning("BM25 index load failed, will attempt rebuild. Error: %s", exc)
+    if not bm25_store.bm25:
+        try:
+            chunks = load_chunks("data/processed_chunks.json")
+            bm25_store.build_index(chunks)
+            bm25_store.save_index(str(bm25_index_path))
+            logger.info("BM25 index built from processed chunks at startup.")
+        except FileNotFoundError:
+            logger.error(
+                "Processed chunks not found at data/processed_chunks.json; "
+                "keyword search will remain unavailable until chunks are built."
+            )
+        except Exception as exc:  # noqa: BLE001
+            logger.error("BM25 auto-build failed: %s", exc)
 
     embedder = EmbeddingGenerator()
     reranker = CrossEncoderReranker()
@@ -65,13 +87,13 @@ def predict_reason(user_state: UserState):
 def nudge_user(request: NudgeRequest):
     try:
         _validate_user_state(request.user_state)
-        nudges = orchestrator.nudge_generator.generate(
-            drop_reason="",
+        reasoning = orchestrator.drop_off_reasoner.analyze(request.user_state.dict(), [])
+        nudges = orchestrator.nudge_generator.generate_all(
+            reasoning.get("primary_reason", ""),
             user_state=request.user_state.dict(),
-            nudge_type=request.nudge_type,
             language=request.language,
         )
-        return nudges
+        return {"reasoning": reasoning, "nudges": nudges}
     except Exception as exc:  # noqa: BLE001
         logger.exception("nudge_user failed: %s", exc)
         raise HTTPException(status_code=500, detail="Failed to generate nudge") from exc

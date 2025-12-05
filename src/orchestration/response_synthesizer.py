@@ -23,17 +23,17 @@ class ResponseSynthesizer:
 
         steps_to_fix = self._extract_steps(context)
 
-        message_prefix = (
-            "I'm not fully sure, but here's what I found:\n"
-            if low_confidence
-            else "Here's what I found:\n"
-        )
-
-        conversational_message = (
-            f"{message_prefix}"
-            f"Primary reason: {reasoning.get('primary_reason')}\n"
-            f"Suggested next step: {steps_to_fix[0] if steps_to_fix else 'Please retry the last step with better lighting/network.'}"
-        )
+        if low_confidence:
+            conversational_message = (
+                "I'm not fully sure about this. Could you provide more details about what went wrong? "
+                "For example, any error messages you saw, the exact step where you got stuck, and your device/network conditions."
+            )
+        else:
+            conversational_message = (
+                "Here's what I found:\n"
+                f"Primary reason: {reasoning.get('primary_reason')}\n"
+                f"Suggested next step: {steps_to_fix[0] if steps_to_fix else 'Please retry the last step with better lighting/network.'}"
+            )
 
         return {
             "predicted_drop_reason": reasoning.get("primary_reason"),
