@@ -1,2 +1,8 @@
 PyMuPDF
+chromadb
+openai
+rank-bm25
+numpy
+tqdm
+python-dotenv
 
