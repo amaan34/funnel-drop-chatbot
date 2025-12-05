@@ -1,0 +1,21 @@
+[
+  {
+    "name": "VKYC OCR failure",
+    "user_state": {"stage_dropped": "VKYC", "error_codes": ["OCR_FAIL"], "device_type": "Android", "language": "english"},
+    "query": "Why did my video KYC fail?",
+    "expected_chunk_ids": ["faq_0", "funnel_step_4"]
+  },
+  {
+    "name": "OTP timeout",
+    "user_state": {"stage_dropped": "OTP", "error_codes": ["OTP_TIMEOUT"], "device_type": "iOS", "language": "english"},
+    "query": "I never got the OTP",
+    "expected_chunk_ids": ["faq_1", "funnel_step_5"]
+  },
+  {
+    "name": "General documents question",
+    "user_state": {"stage_dropped": "eKYC", "error_codes": [], "device_type": "Android", "language": "english"},
+    "query": "What documents do I need for KYC?",
+    "expected_chunk_ids": ["faq_2"]
+  }
+]
+

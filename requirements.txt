@@ -5,4 +5,10 @@ rank-bm25
 numpy
 tqdm
 python-dotenv
+sentence-transformers
+fastapi
+uvicorn
+pydantic
+langchain
+pytest
 

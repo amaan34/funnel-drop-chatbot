@@ -4,6 +4,7 @@ from typing import Dict, List, Optional
 
 from .bm25_store import BM25KeywordStore
 from .chroma_store import ChromaVectorStore
+from .reranker import CrossEncoderReranker
 
 logger = logging.getLogger(__name__)
 
@@ -16,10 +17,12 @@ class HybridRetriever:
         chroma_store: ChromaVectorStore,
         bm25_store: BM25KeywordStore,
         embedding_generator,
+        reranker: Optional[CrossEncoderReranker] = None,
     ) -> None:
         self.chroma_store = chroma_store
         self.bm25_store = bm25_store
         self.embedding_generator = embedding_generator
+        self.reranker = reranker
 
     def retrieve(
         self,
@@ -29,16 +32,26 @@ class HybridRetriever:
         keyword_weight: float = 0.3,
         metadata_filter: Optional[Dict] = None,
         strategy: str = "hybrid",
+        apply_rerank: bool = False,
+        rerank_top_k: int = 10,
     ) -> List[Dict]:
         if strategy == "semantic_only":
-            return self._semantic_search(query, top_k, metadata_filter)
-        if strategy == "keyword_only":
-            return self._keyword_search(query, top_k)
-        if strategy == "adaptive":
-            return self._adaptive_search(query, top_k, metadata_filter)
-        return self._hybrid_search(
-            query, top_k, semantic_weight, keyword_weight, metadata_filter
-        )
+            results = self._semantic_search(query, top_k, metadata_filter)
+        elif strategy == "keyword_only":
+            results = self._keyword_search(query, top_k)
+        elif strategy == "adaptive":
+            results = self._adaptive_search(query, top_k, metadata_filter)
+        else:
+            results = self._hybrid_search(
+                query, top_k, semantic_weight, keyword_weight, metadata_filter
+            )
+
+        if apply_rerank and self.reranker and results:
+            rerank_limit = min(max(rerank_top_k, top_k), len(results))
+            reranked = self.reranker.rerank(query, results, top_k=rerank_limit)
+            return reranked[:top_k]
+
+        return results[:top_k]
 
     def _semantic_search(
         self, query: str, top_k: int, metadata_filter: Optional[Dict]
