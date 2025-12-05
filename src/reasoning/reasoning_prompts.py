@@ -27,6 +27,12 @@ Requirements:
 - Think step-by-step.
 - Identify primary reason and 2-3 secondary reasons.
 - Consider device-specific issues (Android/iOS) and time-based network issues when relevant.
-- Return JSON with fields: primary_reason, secondary_reasons, confidence (0-1), reasoning_chain.
+- Output must be a single JSON object only (no prose, no markdown, no code fences).
+- JSON keys (all required):
+  - primary_reason: concise string
+  - secondary_reasons: array of 2-3 concise strings
+  - confidence: number between 0 and 1
+  - reasoning_chain: short step-by-step string
+- Respond with only the JSON object and nothing else.
 """
 

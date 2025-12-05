@@ -1,5 +1,6 @@
 import json
 import logging
+import re
 from datetime import datetime, timezone
 from typing import Dict, List, Optional
 
@@ -84,6 +85,24 @@ class DropOffReasoner:
             return None
         return TIME_BUCKET_HINTS.get(bucket)
 
+    def _extract_json_object(self, text: Optional[str]) -> Optional[str]:
+        if not text:
+            return None
+        cleaned = text.strip()
+        cleaned = re.sub(r"^```(?:json)?\s*|\s*```$", "", cleaned, flags=re.IGNORECASE | re.DOTALL).strip()
+        start = cleaned.find("{")
+        if start == -1:
+            return None
+        depth = 0
+        for idx, ch in enumerate(cleaned[start:], start=start):
+            if ch == "{":
+                depth += 1
+            elif ch == "}":
+                depth -= 1
+                if depth == 0:
+                    return cleaned[start : idx + 1]
+        return None
+
     def _context_to_snippets(self, retrieved_context: List[Dict], limit: int = 3) -> List[str]:
         return [c.get("content", "") for c in retrieved_context[:limit] if c.get("content")]
 
@@ -92,6 +111,9 @@ class DropOffReasoner:
         device_reason = self._device_based_reason(user_state)
         time_reason = self._time_based_reason(user_state)
         context_snippets = self._context_to_snippets(retrieved_context)
+        stage = user_state.get("stage_dropped") or user_state.get("stage") or "unknown"
+        device = user_state.get("device_type") or user_state.get("device") or "unknown"
+        timestamp = user_state.get("timestamp") or "unknown"
 
         llm_output = None
         if self.llm_client:
@@ -101,11 +123,38 @@ class DropOffReasoner:
                     [
                         {"role": "system", "content": "You are a precise analyst. Always return JSON."},
                         {"role": "user", "content": prompt},
-                    ]
+                    ],
+                    temperature=0.1,
                 )
-                llm_output = json.loads(raw)
+                sanitized = self._extract_json_object(raw) or raw
+                if sanitized != raw:
+                    logger.info("Sanitized LLM output before JSON parsing.")
+                llm_output = json.loads(sanitized)
             except Exception as exc:  # noqa: BLE001
-                logger.warning("LLM reasoning failed, falling back to rules. Error: %s", exc)
+                logger.info("LLM JSON parse failed, retrying with strict prompt. Error: %s", exc)
+                strict_prompt = (
+                    "Return ONLY a JSON object with keys primary_reason, secondary_reasons, "
+                    "confidence, reasoning_chain. No markdown, no code fences, no prose. "
+                    "Secondary reasons should include device/time considerations when relevant. "
+                    f"Stage: {stage}. Device: {device}. Timestamp: {timestamp}. "
+                    f"User State: {user_state}. Context: {context_snippets}"
+                )
+                try:
+                    retry_raw = self.llm_client.chat(
+                        [
+                            {"role": "system", "content": "You are a precise analyst. Output JSON only."},
+                            {"role": "user", "content": strict_prompt},
+                        ],
+                        temperature=0.1,
+                    )
+                    retry_sanitized = self._extract_json_object(retry_raw) or retry_raw
+                    if retry_sanitized != retry_raw:
+                        logger.info("Sanitized LLM retry output before JSON parsing.")
+                    llm_output = json.loads(retry_sanitized)
+                except Exception as retry_exc:  # noqa: BLE001
+                    logger.warning(
+                        "LLM reasoning failed after retry, falling back to rules. Error: %s", retry_exc
+                    )
 
         primary_reason = None
         if isinstance(llm_output, dict) and llm_output.get("primary_reason"):
