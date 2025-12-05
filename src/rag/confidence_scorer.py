@@ -17,21 +17,26 @@ class ConfidenceScorer:
             return 0.0
 
         similarity_scores = [
-            r.get("similarity_score")
+            max(0.0, r.get("similarity_score"))
             for r in results
             if r.get("similarity_score") is not None
         ]
         rerank_scores = [
-            r.get("rerank_score")
+            max(0.0, r.get("rerank_score"))
             for r in results
             if r.get("rerank_score") is not None
         ]
 
         avg_similarity = statistics.fmean(similarity_scores) if similarity_scores else 0.0
         max_similarity = max(similarity_scores) if similarity_scores else 0.0
-        avg_rerank = statistics.fmean(rerank_scores) if rerank_scores else 1.0
 
-        confidence = avg_similarity * max_similarity * avg_rerank
+        # Use a neutral multiplier (0.5) when rerank scores are absent or very low.
+        rerank_factor = statistics.fmean(rerank_scores) if rerank_scores else 0.5
+        rerank_factor = max(rerank_factor, 0.5)
+
+        confidence = avg_similarity * max_similarity * rerank_factor
+        # Clamp to [0.0, 1.0] to avoid negative or runaway values.
+        confidence = min(max(confidence, 0.0), 1.0)
         return float(confidence)
 
     def is_low_confidence(self, confidence: float) -> bool:

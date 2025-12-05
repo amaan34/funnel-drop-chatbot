@@ -8,6 +8,18 @@ FORBIDDEN_PATTERNS = [
     r"\bfinancial advice\b",
     r"\bmedical\b",
     r"\bblame\b",
+    # Over-promising or misleading certainty
+    r"\b100%\s*(success|guarantee)?\b",
+    r"\balways works\b",
+    r"\bnever fails?\b",
+    # Discriminatory or harmful language
+    r"\bracist\b",
+    r"\bhate speech\b",
+    r"\bdiscriminat(e|ion)\b",
+    # Sensitive data leakage
+    r"\baccount number\b",
+    r"\bcard number\b",
+    r"\b\d{12,19}\b",  # potential payment/ID numbers
 ]
 
 

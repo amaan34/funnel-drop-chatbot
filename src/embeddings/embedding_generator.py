@@ -61,8 +61,11 @@ class EmbeddingGenerator:
     ) -> None:
         self.config = config
         key = api_key or os.getenv("OPENAI_API_KEY")
-        if not key:
-            raise ValueError("OPENAI_API_KEY is required to generate embeddings.")
+        # Fail fast if the key is missing or still the placeholder from .env
+        if not key or "YOUR_KEY" in key:
+            raise ValueError(
+                "OPENAI_API_KEY is required to generate embeddings. Update your .env with a valid key."
+            )
         self.client = OpenAI(api_key=key)
         logger.info(
             "Initialized OpenAI embedding model %s (dim=%s)",
