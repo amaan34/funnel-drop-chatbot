@@ -23,6 +23,7 @@ class HybridRetriever:
         self.bm25_store = bm25_store
         self.embedding_generator = embedding_generator
         self.reranker = reranker
+        self._semantic_ready = True
 
     def retrieve(
         self,
@@ -155,3 +156,25 @@ class HybridRetriever:
             keyword_weight=0.5,
             metadata_filter=metadata_filter,
         )
+
+    def health_status(self) -> Dict:
+        """Report readiness of underlying stores."""
+        semantic_count = 0
+        semantic_ok = False
+        try:
+            semantic_count = self.chroma_store.count()
+            semantic_ok = semantic_count > 0
+        except Exception:
+            semantic_ok = False
+
+        keyword_ok = False
+        try:
+            keyword_ok = self.bm25_store.is_ready()
+        except Exception:
+            keyword_ok = False
+
+        return {
+            "semantic_ready": semantic_ok,
+            "semantic_count": semantic_count,
+            "keyword_ready": keyword_ok,
+        }

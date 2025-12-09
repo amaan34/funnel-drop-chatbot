@@ -25,6 +25,7 @@ app = FastAPI(title="Funnel Drop Chatbot API")
 app.middleware("http")(logging_middleware)
 
 ALLOWED_STAGES = {"eKYC", "VKYC", "OTP", "Liveliness", "Additional_Details", "General"}
+STORE_HEALTH = {"bm25_ready": False, "bm25_message": ""}
 
 
 def _init_retriever() -> HybridRetriever:
@@ -37,6 +38,7 @@ def _init_retriever() -> HybridRetriever:
 
     bm25_store = BM25KeywordStore()
     bm25_index_path = Path("data/bm25_index.pkl")
+    bm25_message = ""
     if bm25_index_path.exists():
         try:
             bm25_store.load_index(str(bm25_index_path))
@@ -49,16 +51,20 @@ def _init_retriever() -> HybridRetriever:
             bm25_store.save_index(str(bm25_index_path))
             logger.info("BM25 index built from processed chunks at startup.")
         except FileNotFoundError:
-            logger.error(
+            bm25_message = (
                 "Processed chunks not found at data/processed_chunks.json; "
-                "keyword search will remain unavailable until chunks are built."
+                "keyword search unavailable until chunks are built."
             )
+            logger.warning(bm25_message)
         except Exception as exc:  # noqa: BLE001
-            logger.error("BM25 auto-build failed: %s", exc)
+            bm25_message = f"BM25 auto-build failed: {exc}"
+            logger.error(bm25_message)
 
     embedder = EmbeddingGenerator()
     reranker = CrossEncoderReranker()
     retriever = HybridRetriever(chroma_store, bm25_store, embedder, reranker=reranker)
+    STORE_HEALTH["bm25_ready"] = bm25_store.is_ready()
+    STORE_HEALTH["bm25_message"] = bm25_message
     return retriever
 
 
@@ -110,5 +116,16 @@ def chat(request: ChatRequest):
 
 @app.get("/health")
 def health():
-    return {"status": "ok"}
+    retriever_status = retriever.health_status()
+    bm25_ready = STORE_HEALTH.get("bm25_ready", False)
+    overall_ok = retriever_status.get("semantic_ready") and bm25_ready
+    return {
+        "status": "ok" if overall_ok else "degraded",
+        "stores": {
+            "semantic_ready": retriever_status.get("semantic_ready"),
+            "semantic_count": retriever_status.get("semantic_count"),
+            "keyword_ready": bm25_ready,
+            "keyword_message": STORE_HEALTH.get("bm25_message", ""),
+        },
+    }
 

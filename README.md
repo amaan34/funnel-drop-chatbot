@@ -321,13 +321,16 @@ OPENAI_API_KEY=your_openai_api_key_here
 LLM_MODEL=gpt-4o-mini  # or gpt-4, gpt-3.5-turbo
 ```
 
-### Step 3: Build Vector Store (if not present)
+### Step 3: Rebuild indexes (if missing)
 
-The vector store is pre-built in `data/vector_store/`. To rebuild:
-
+Run from repo root:
 ```bash
-python -c "from src.document_processing import process_and_store; process_and_store()"
+python -m src.vector_store.build_store
 ```
+Outputs:
+- `data/processed_chunks.json`, `data/embedded_chunks.json`
+- Chroma at `data/vector_store/` (collection `funnel_drop_chunks`)
+- BM25 index at `data/bm25_index.pkl`
 
 ### Step 4: Run the Server
 

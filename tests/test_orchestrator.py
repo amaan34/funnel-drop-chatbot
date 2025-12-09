@@ -1,7 +1,4 @@
-import os
 from typing import Dict
-
-import pytest
 
 from src.nudge.compliance_validator import ComplianceValidator
 from src.nudge.nudge_generator import NudgeGenerator
@@ -10,12 +7,6 @@ from src.orchestration.response_synthesizer import ResponseSynthesizer
 from src.reasoning.drop_off_reasoner import DropOffReasoner
 
 
-requires_api_key = pytest.mark.skipif(
-    not os.getenv("OPENAI_API_KEY"), reason="OPENAI_API_KEY not set"
-)
-
-
-@requires_api_key
 def test_synthesizer_returns_citations():
     synthesizer = ResponseSynthesizer()
     reasoning = {"primary_reason": "Test", "reasoning_chain": "Because"}

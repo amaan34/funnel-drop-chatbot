@@ -15,6 +15,7 @@ class BM25KeywordStore:
         self.bm25: BM25Okapi | None = None
         self.chunks: List[Dict] = []
         self.tokenized_corpus: List[List[str]] = []
+        self.loaded_from_disk: bool = False
 
     def tokenize(self, text: str) -> List[str]:
         """Lowercase tokenize while preserving all-caps codes."""
@@ -38,7 +39,8 @@ class BM25KeywordStore:
     def search(self, query: str, top_k: int = 5) -> List[Dict]:
         """Search using BM25."""
         if not self.bm25:
-            raise ValueError("BM25 index not built. Call build_index() first.")
+            logger.warning("BM25 search requested but index not ready; returning empty results.")
+            return []
         query_tokens = self.tokenize(query)
         scores = self.bm25.get_scores(query_tokens)
         top_indices = sorted(range(len(scores)), key=lambda i: scores[i], reverse=True)[:top_k]
@@ -76,4 +78,9 @@ class BM25KeywordStore:
         self.bm25 = data["bm25"]
         self.chunks = data["chunks"]
         self.tokenized_corpus = data["tokenized_corpus"]
+        self.loaded_from_disk = True
         logger.info("BM25 index loaded from %s", filepath)
+
+    def is_ready(self) -> bool:
+        """Return whether the BM25 index is available for search."""
+        return self.bm25 is not None
