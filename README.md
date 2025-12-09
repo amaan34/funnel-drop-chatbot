@@ -618,13 +618,6 @@ funnel-drop-chatbot/
 │   ├── eval_report.json             # Latest evaluation results
 │   ├── Assignment RAG_context_file.pdf   # Source document
 │   └── GEN AI ENGINEER ASSIGNMENT FUNNEL DROP CHATBOT.pdf
-├── docs/
-│   ├── architecture.md              # System architecture details
-│   ├── architecture_diagram.md      # Mermaid diagrams
-│   ├── decisions.md                 # Design decisions & tradeoffs
-│   ├── fine_tuning_design.md        # LoRA fine-tuning design
-│   ├── fine_tuning_lora_design.md   # Detailed LoRA plan
-│   └── evaluation_summary.md        # Evaluation results summary
 ├── tests/
 │   ├── test_cases.json              # Sample test scenarios
 │   ├── test_integration.py          # Integration tests
